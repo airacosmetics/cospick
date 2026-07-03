@@ -24,10 +24,19 @@
         <li><a href="#about">브랜드</a></li>
       </ul>
       <div class="nav-icons">
-        <button aria-label="검색">🔍</button>
-        <button aria-label="장바구니">🛒</button>
+        <button id="searchToggle" aria-label="검색">🔍</button>
+        <button id="cartToggle" class="cart-btn" aria-label="장바구니">🛒<span id="cartCount" class="cart-count" hidden>0</span></button>
       </div>
     </nav>
+    <!-- 검색바 (AI 검색) -->
+    <div id="searchBar" class="search-bar" hidden>
+      <form id="searchForm" class="search-form">
+        <input id="searchInput" type="text" placeholder="예: 건조한 피부에 좋은 수분 제품 추천해줘" autocomplete="off" />
+        <button type="submit">검색</button>
+        <button type="button" id="searchClear" class="ghost">초기화</button>
+      </form>
+      <p id="searchMsg" class="search-msg"></p>
+    </div>
   </header>
 
   <!-- 히어로 -->
@@ -80,6 +89,20 @@
       <p>© 2026 COSPICK. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- 장바구니 드로어 -->
+  <div id="cartOverlay" class="cart-overlay" hidden></div>
+  <aside id="cartDrawer" class="cart-drawer" hidden aria-label="장바구니">
+    <div class="cart-head">
+      <h3>장바구니</h3>
+      <button id="cartClose" aria-label="닫기">✕</button>
+    </div>
+    <div id="cartBody" class="cart-body"></div>
+    <div class="cart-foot">
+      <div class="cart-total"><span>합계</span><strong id="cartTotal">0원</strong></div>
+      <button id="checkoutBtn" class="checkout-btn">주문하기</button>
+    </div>
+  </aside>
 
   <script src="app.js"></script>
 </body>

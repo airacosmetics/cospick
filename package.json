@@ -1,0 +1,7 @@
+{
+  "name": "cospick",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "COSPICK - 화장품 셀렉트샵 (장바구니/AI검색 API 포함)"
+}
